@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irma Desk — Scheduling Assistant</title>
+<meta name="description" content="Irma is a scheduling and communications assistant for Aris, founder of Curve Contracts and Paredo.">
+<meta property="og:title" content="Irma Desk">
+<meta property="og:description" content="Scheduling and communications assistant for Curve Contracts and Paredo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://irmadesk.com">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  /* ==============================
+     IRMA DESK — Landing Page
+     Design: Navy + Gold, warm professional
+     Purpose: Answer "Who is Irma?" and get out of the way
+     ============================== */
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy:   #1a1a2e;
+    --navy-light: #2a2a42;
+    --gold:   #c8a255;
+    --gold-light: #d4b76e;
+    --cream:  #f5f5f0;
+    --white:  #ffffff;
+    --slate:  #6b6b80;
+    --sage:   #4a7c6f;
+    --text:   #2c2c3a;
+    --text-light: #9e9eb0;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, 'Segoe UI', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    padding: 100px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(200,162,85,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(200,162,85,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .monogram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border: 2px solid var(--gold);
+    border-radius: 16px;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 32px;
+    position: relative;
+    letter-spacing: -0.5px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .hero h1 span {
+    color: var(--gold);
+  }
+
+  .hero p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  /* ---- DIVIDER ---- */
+  .gold-line {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin: 40px auto;
+    opacity: 0.6;
+  }
+
+  /* ---- CONTENT ---- */
+  .content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 72px 24px 80px;
+    text-align: center;
+  }
+
+  .content h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+
+  .content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--slate);
+    margin-bottom: 16px;
+  }
+
+  .content p strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* ---- CAPABILITIES ---- */
+  .capabilities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .cap-item {
+    background: var(--white);
+    border: 1px solid #e5e5df;
+    border-radius: 10px;
+    padding: 24px 16px;
+  }
+
+  .cap-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .cap-item h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .cap-item p {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+
+  /* ---- BRANDS ---- */
+  .brands {
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid #e0e0da;
+  }
+
+  .brands p.label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+  }
+
+  .brand-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .brand-name {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .brand-name.curve { color: var(--gold); }
+  .brand-name.paredo { color: var(--sage); }
+
+  /* ---- CONTACT ---- */
+  .contact-bar {
+    background: var(--navy);
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  .contact-bar a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .contact-bar a:hover {
+    color: var(--gold-light);
+  }
+
+  .contact-bar .sep {
+    color: rgba(255,255,255,0.2);
+    margin: 0 16px;
+  }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 480px) {
+    .hero { padding: 72px 20px 56px; }
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 16px; }
+    .content { padding: 48px 20px 56px; }
+    .capabilities { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- HERO -->
+<!-- ============================================ -->
+<section class="hero">
+  <div class="monogram">ID</div>
+  <h1>Irma <span>Desk</span></h1>
+  <p>Scheduling and communications assistant for Aris and his companies.</p>
+</section>
+
+<!-- ============================================ -->
+<!-- MAIN CONTENT -->
+<!-- ============================================ -->
+<section class="content">
+
+  <h2>Who is Irma?</h2>
+  <p>
+    If you've received an email or calendar invite from
+    <strong>irma@irmadesk.com</strong>, it was sent on behalf of
+    <strong>Aris</strong> — founder of Curve Contracts and Paredo.
+  </p>
+  <p>
+    Irma handles scheduling, meeting coordination, and communications
+    so that Aris can focus on the work that matters to you.
+  </p>
+
+  <div class="gold-line"></div>
+
+  <!-- ---- CAPABILITIES ---- -->
+  <div class="capabilities">
+    <div class="cap-item">
+      <div class="cap-icon">&#128197;</div>
+      <h3>Scheduling</h3>
+      <p>Meeting invites and calendar coordination</p>
+    </div>
+    <div class="cap-item">
+      <div class="cap-icon">&#9993;</div>
+      <h3>Communications</h3>
+      <p>Follow-ups, reminders, and confirmations</p>
+    </div>
+    <div class="cap-item">
+      <div class="cap-icon">&#128196;</div>
+      <h3>Coordination</h3>
+      <p>Document sharing and logistics</p>
+    </div>
+  </div>
+
+  <!-- ---- BRANDS ---- -->
+  <div class="brands">
+    <p class="label">On behalf of</p>
+    <div class="brand-logos">
+      <span class="brand-name curve">Curve Contracts</span>
+      <span class="brand-name paredo">Paredo</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================ -->
+<!-- CONTACT BAR -->
+<!-- ============================================ -->
+<section class="contact-bar">
+  <a href="mailto:irma@irmadesk.com">irma@irmadesk.com</a>
+  <span class="sep">·</span>
+  <a href="https://curvecontracts.com">curvecontracts.com</a>
+  <span class="sep">·</span>
+  <a href="https://paredo.com">paredo.com</a>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER -->
+<!-- ============================================ -->
+<footer class="footer">
+  &copy; 2026 Irma Desk &middot; A scheduling assistant by Aris
+</footer>
+
+</body>
+</html>
